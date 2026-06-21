@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常查询 · 对照与延伸</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3ed;
+      font-family: 'Georgia', 'Noto Serif SC', 'Songti SC', serif;
+      color: #3c3834;
+      line-height: 1.75;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: #faf8f5;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e5ddd3;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #2d2925;
+      border-left: 4px solid #b7a692;
+      padding-left: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-style: italic;
+      color: #7f756b;
+      margin-bottom: 2.2rem;
+      font-size: 1.05rem;
+      border-bottom: 1px dashed #d6cec2;
+      padding-bottom: 0.8rem;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      background: #f1ece4;
+      padding: 1.2rem 1.6rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      color: #4a433c;
+      border-left: 4px solid #c4b6a4;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 2rem 0 0.6rem 0;
+      color: #3d352e;
+      border-bottom: 1px solid #e0d7cb;
+      padding-bottom: 0.2rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      text-indent: 2em;
+    }
+
+    .no-indent {
+      text-indent: 0;
+    }
+
+    .quote-block {
+      background: #f1ece4;
+      padding: 1.2rem 1.6rem;
+      border-radius: 8px;
+      border-left: 5px solid #b7a692;
+      margin: 1.8rem 0;
+      font-style: italic;
+      color: #4f483f;
+    }
+
+    .quote-block p {
+      text-indent: 0;
+      margin-bottom: 0.4rem;
+    }
+
+    .quote-block .attribution {
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: #7f756b;
+      text-align: right;
+    }
+
+    .note-box {
+      background: #eeeadf;
+      border: 1px solid #d6cec2;
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.8rem 0;
+    }
+
+    .note-box p {
+      text-indent: 0;
+      margin-bottom: 0.4rem;
+    }
+
+    .note-box strong {
+      color: #5d4f3f;
+    }
+
+    .faq-item {
+      margin: 1.2rem 0;
+    }
+
+    .faq-item .question {
+      font-weight: 600;
+      color: #3d352e;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item .answer {
+      padding-left: 1.2rem;
+      border-left: 2px solid #d6cec2;
+      color: #4a433c;
+    }
+
+    .faq-item .answer p {
+      text-indent: 0;
+      margin-bottom: 0.3rem;
+    }
+
+    .context-link {
+      background: #f4efe8;
+      padding: 1.2rem 1.6rem;
+      border-radius: 8px;
+      margin: 2rem 0 1rem;
+      text-align: center;
+      border: 1px solid #ddd3c6;
+    }
+
+    .context-link a {
+      color: #5b4d3c;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #b7a692;
+      transition: border 0.2s;
+    }
+
+    .context-link a:hover {
+      border-bottom: 1px solid #5b4d3c;
+    }
+
+    .context-link .hint {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #7f756b;
+    }
+
+    .closing {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ddd3c6;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #7f756b;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      .container {
+        padding: 1.5rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+        padding-left: 0.7rem;
+      }
+      .lead {
+        font-size: 1.05rem;
+        padding: 1rem 1.2rem;
+      }
+      .context-link {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>日常查询·对照与延伸</h1>
+    <div class="subtitle">从一次搜索开始，慢慢走得更远</div>
+
+    <div class="lead">
+      <p class="no-indent">有时候我们打开浏览器，只是想确认一个名字、一个平台，或者一段印象。那些随手敲下的查询，往往能牵引出更多值得对照的信息和延伸的线索。这篇文章就从一个日常的查询说起。</p>
+    </div>
+
+    <h2>一段记录的切面</h2>
+    <p>不久前，一位朋友在聊天中提及，他正在整理过去几年收藏的网址和笔记，发现很多链接已经失效，也有些域名换了主人。他感叹说，网络上的标记有时比纸上的铅笔字还容易模糊。我在一旁听着，忽然想到自己也有类似的习惯——遇到不太熟悉的名字，总会先搜一下，看看页面长什么样，再决定是否深入了解。</p>
+    <p>这种查询几乎不带目的，更像是一种<strong>对照</strong>：把当下的印象和页面呈现的内容并排放置，看看哪些信息吻合，哪些又超出预期。久而久之，这种对照成了一种个人式的延伸阅读起点。</p>
+
+    <h2>顺着名字走下去</h2>
+    <p>名字本身常常只是索引。比如某天你听到一个叫「开云」的名字，直觉上它可能指向一个品牌、一个平台，或是一类服务。你打开搜索框，输入，然后看到结果里跳出 <a href="https://m-cn-kai-yun.com">开云</a> 的页面。这时候你面对的其实不只是一个地址，而是一整片可以慢慢翻阅的内容区域——它的介绍、它的结构、它提供的入口和说明。</p>
+    <p>我倾向于把这种时刻称作<strong>「第一层对照」</strong>：你带着模糊的印象，看到了清晰的页面，然后你会不自觉地开始比较——名字和实际是否一致？首页的调性是否符合预期？这些信息能不能回答你最初的问题？</p>
+
+    <div class="quote-block">
+      <p>“查询的意义，往往不在于找到那个确切的答案，而在于你沿着路径走下去时，遇见了哪些原先没想过要问的问题。”</p>
+      <div class="attribution">——摘自某次闲聊的记录</div>
+    </div>
+
+    <h2>延伸阅读的路径</h2>
+    <p>第一层对照之后，通常会出现两种走向。一种是快速确认，然后关闭标签页，回到原本的工作流里；另一种是被页面中的某些细节吸引，从而开始<strong>延伸阅读</strong>——也许是某个功能的说明，也许是某段关于理念的阐述，又或者是页面底部列出的相关条目。</p>
+    <p>我个人的经验是，延伸阅读的质量很大程度上取决于页面本身的<strong>结构清晰度</strong>。如果一个页面能让人在几分钟内就明白它覆盖的范围、它的侧重点，以及它与其他资源的关系，那么这次延伸就会变得很顺畅。反之，如果页面堆叠了大量信息而没有层次，延伸就很容易变成疲劳的滚动。</p>
+
+    <div class="note-box">
+      <p><strong>☕ 提示：</strong> 在查阅任何页面时，可以尝试先浏览一下它的导航或核心栏目，再决定从哪一部分开始细读。这种「先框架后细节」的方式，能让后续的延伸阅读更有方向感。</p>
+    </div>
+
+    <h2>几个常见的查询场景</h2>
+    <div class="faq-item">
+      <div class="question">场景一：想要了解某个名字的背景</div>
+      <div class="answer">
+        <p>输入名字，看到首页，第一印象往往来自视觉风格和文案语气。温和、克制的页面会让人觉得可以放心往下翻，而过度渲染的页面则容易让人警觉。对照自己的预期，就能快速判断是否继续深入。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question">场景二：在多个页面之间做信息对照</div>
+      <div class="answer">
+        <p>有时我们会在几个页面之间来回切换，比较它们的描述是否一致，或者某个细节是否在不同出处里都被提及。这种对照适合用标签页并排打开，逐条核对。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question">场景三：延伸阅读时保持上下文</div>
+      <div class="answer">
+        <p>从一个页面跳转到另一个页面时，很容易丢失原本的上下文。我习惯在阅读时用简单的笔记记下当前页面的核心关键词，这样即使开了很多标签页，回头整理时也能快速连起来。</p>
+      </div>
+    </div>
+
+    <div class="context-link">
+      <span>如果你也想从一次查询开始，看看能延伸出什么，可以试试打开 <a href="https://m-cn-kai-yun.com">开云</a> 的页面，从那里开始你的对照阅读。</span>
+      <span class="hint">不必带着明确的问题，慢慢看，总会有些段落让你停下来。</span>
+    </div>
+
+    <h2>一段小结式的想法</h2>
+    <p>日常查询的魅力，恰恰在于它的<strong>低门槛</strong>。你不需要准备什么，也不需要预设结果。只需要一个名字、一个链接，然后顺着页面本身的节奏往下走。有时候你会很快离开，有时候你会意外地停留很久——两种结果都是好的。</p>
+    <p>延伸阅读也不是什么高深的技巧，它更像是一种习惯：不满足于一个孤立的页面，而是试着去理解这个页面和它周围的信息网络之间的关系。当你养成了这种习惯，每一次查询都会变得比上一次更丰富一点。</p>
+
+    <div class="closing">
+      <p>本文写于一个安静的午后 · 记录一次关于查询与对照的日常对话</p>
+    </div>
+  </div>
+</body>
+</html>
