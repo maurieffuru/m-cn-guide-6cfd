@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fbe9e7 0%, #fce4c5 50%, #f8d5b0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #2e241e;
+        }
+        .page-wrapper {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* 卡片基调 */
+        .card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 12px 28px -8px rgba(160, 100, 60, 0.18), 0 4px 12px rgba(0,0,0,0.02);
+            transition: box-shadow 0.25s;
+            border: 1px solid rgba(255, 225, 200, 0.3);
+        }
+        .card:hover {
+            box-shadow: 0 18px 36px -10px rgba(150, 80, 40, 0.22);
+        }
+
+        /* 目录式布局网格 */
+        .grid-dir {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-top: 2.2rem;
+        }
+        @media (max-width: 680px) {
+            .grid-dir {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+            .card {
+                padding: 1.6rem 1.4rem;
+            }
+        }
+
+        /* 标题系列 */
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            border-left: 5px solid #d3855c;
+            padding-left: 0.9rem;
+            margin-bottom: 1.2rem;
+            color: #3a2b22;
+        }
+        .hero-title {
+            font-size: 2.4rem;
+            font-weight: 620;
+            color: #3a2317;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .hero-sub {
+            color: #5e4235;
+            font-size: 1.1rem;
+            border-bottom: 1px dashed #dbb09a;
+            padding-bottom: 0.8rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* 按钮感链接 */
+        .link-button {
+            display: inline-block;
+            background: #e47b4a;
+            color: #fff;
+            font-weight: 500;
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(200, 100, 50, 0.15);
+            letter-spacing: 0.02em;
+            border: none;
+            cursor: default;
+        }
+        .link-button:hover {
+            background: #c8693d;
+            transform: scale(1.02);
+        }
+        a {
+            color: #b55d36;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #d9a989;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+        a:hover {
+            color: #7f3f21;
+            text-decoration-color: #7f3f21;
+        }
+
+        /* 列表修饰 */
+        .info-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .info-list li {
+            padding: 0.45rem 0 0.45rem 1.9rem;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23d3855c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>') left center no-repeat;
+            background-size: 1rem;
+        }
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 1rem;
+            margin: 1rem 0 0.2rem;
+        }
+        .tag {
+            background: #f3e2d8;
+            color: #3f2d23;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 450;
+            border: 1px solid #e3cbbc;
+        }
+
+        .notice-box {
+            background: #f5efe9;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0 0.6rem;
+            border-left: 6px solid #d3855c;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #3c2c21;
+        }
+        .faq-a {
+            padding-left: 0.8rem;
+            color: #4f3a2e;
+        }
+
+        .footer-note {
+            margin-top: 1.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6f5a4b;
+            border-top: 1px solid #e6d3c6;
+            padding-top: 1.6rem;
+        }
+
+        .intro-highlight {
+            background: #fcf6f1;
+            border-radius: 16px;
+            padding: 0.8rem 1.4rem;
+            margin: 0.6rem 0 1rem;
+            font-style: normal;
+        }
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero 区：简明指南切入 -->
+    <div class="card" style="margin-bottom: 1.8rem;">
+        <div class="hero-title">爱游戏 · 知识库</div>
+        <div class="hero-sub">简明指南 · 访问提醒 · 信息索引</div>
+        <p style="margin-top: 0.8rem; max-width: 70ch;">
+            本页汇集与 <a href="https://home-m-igame.com">爱游戏</a> 相关的常见要点、使用场景提示以及目录式参考信息，
+            帮助你更顺畅地了解平台内容与访问方式。以下按模块整理，便于按需查阅。
+        </p>
+        <div class="intro-highlight">
+            <span style="font-weight: 500;">📌 快速定位：</span> 
+            平台概览 · 适用场景 · 访问提示 · 常见问题摘要
+        </div>
+    </div>
+
+    <!-- 目录感布局：两个主要卡片 -->
+    <div class="grid-dir">
+        <!-- 左侧：说明区 + 特点 -->
+        <div class="card">
+            <div class="section-title">📖 说明与特点</div>
+            <p style="margin-bottom: 0.8rem;">
+                <a href="https://home-m-igame.com">爱游戏</a> 提供围绕游戏内容的信息整合与互动环境，
+                适合寻找游戏资讯、社区讨论或查阅相关资料的普通用户。平台整体偏向内容聚合与轻量社交。
+            </p>
+            <ul class="info-list" style="margin: 0.8rem 0 1.2rem;">
+                <li>多类型游戏信息归类呈现，方便检索</li>
+                <li>用户可参与讨论与内容分享</li>
+                <li>持续更新游戏动态与专题内容</li>
+                <li>界面清晰，移动端与桌面均可正常使用</li>
+            </ul>
+            <div class="tag-group">
+                <span class="tag">游戏资讯</span>
+                <span class="tag">社区互动</span>
+                <span class="tag">内容归档</span>
+                <span class="tag">轻量平台</span>
+            </div>
+        </div>
+
+        <!-- 右侧：场景 + 相关信息 -->
+        <div class="card">
+            <div class="section-title">📍 适用场景举例</div>
+            <ul class="info-list">
+                <li>了解某款游戏的近期动态与玩家讨论</li>
+                <li>查找游戏背景、版本信息或活动公告</li>
+                <li>浏览不同游戏分类下的推荐内容</li>
+                <li>在社区内浏览其他玩家的经验与分享</li>
+            </ul>
+            <div style="margin-top: 1.4rem;">
+                <div class="section-title" style="border-left-color: #b57856; margin-bottom: 0.6rem;">🔗 相关信息</div>
+                <p style="font-size: 0.95rem;">
+                    平台内设多个内容分区，可根据兴趣浏览。如对具体功能有疑问，可参考站内提示或常见问题区域。
+                    关于访问方式与网络环境，见下方提示区。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提示区：访问提醒 & 注意事项 -->
+    <div class="card" style="margin-top: 1.8rem;">
+        <div class="section-title">⚠️ 访问提醒 · 提示区</div>
+        <div class="flex-between" style="gap: 1rem;">
+            <div style="flex: 2;">
+                <ul class="info-list" style="margin-bottom: 0.2rem;">
+                    <li>建议使用主流浏览器（Chrome、Edge、Safari 等）获得完整体验</li>
+                    <li>部分区域可能需要登录后参与互动，浏览内容通常无需注册</li>
+                    <li>网络环境稳定即可正常访问，如遇加载缓慢可尝试刷新</li>
+                    <li>平台内容由用户与官方共同贡献，请理性参考</li>
+                </ul>
+            </div>
+            <div style="flex: 1; background: #faefe7; border-radius: 20px; padding: 1rem 1.2rem; min-width: 150px;">
+                <span style="font-weight: 600; display: block; margin-bottom: 0.3rem;">💡 简要提醒</span>
+                直接使用 <a href="https://home-m-igame.com">爱游戏</a> 域名访问，注意核对地址。不轻信非官方渠道信息。
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要区 + 附加说明 -->
+    <div class="notice-box">
+        <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.7rem;">❓ 常见问题摘要 (FAQ)</div>
+        <div class="faq-item">
+            <div class="faq-q">Q：是否需要付费使用？</div>
+            <div class="faq-a">基础浏览与社区功能免费，部分增值服务或特殊标识以平台规则为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：内容更新频率如何？</div>
+            <div class="faq-a">游戏资讯与社区内容日常更新，专题活动期间频率会增加。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：移动端体验怎样？</div>
+            <div class="faq-a">页面适配移动设备，部分交互可正常使用，建议横屏或竖屏按需调整。</div>
+        </div>
+        <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #4a3a30;">
+            📎 更多细节可于站内帮助或相关页面查阅。
+        </div>
+    </div>
+
+    <!-- 嵌入链接句子：自然出现爱游戏 -->
+    <div style="margin-top: 1.2rem; background: #fff6f0; border-radius: 24px; padding: 1rem 1.8rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.2rem;">
+        <span style="font-weight: 450;">🔍 如果你希望直接探索内容，</span>
+        <span>可以通过 <a href="https://home-m-igame.com">爱游戏</a> 开始浏览当前的信息板块。</span>
+        <span style="color: #6b4e3d; font-size: 0.9rem;">（页面内容供参考，实际以平台为准）</span>
+    </div>
+
+    <!-- footer 信息 -->
+    <div class="footer-note">
+        <span>知识库入口 · 信息整理页面 · 版本 2025</span>
+        <span style="display: block; margin-top: 0.25rem; opacity: 0.7;">保持清晰 · 真实参考</span>
+    </div>
+
+</div>
+</body>
+</html>
